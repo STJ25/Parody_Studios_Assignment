@@ -4860,8 +4860,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivot: {fileID: 8210045864739311544}
   mouseSensitivity: 1.5
-  verticalMinClamp: -30
-  verticalMaxClamp: 60
+  verticalMinClamp: -20
+  verticalMaxClamp: 40
   invertY: 0
   smoothTime: 0.05
 --- !u!114 &8896593547492356963
@@ -4877,8 +4877,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  gravityStrength: 60
+  gravityStrength: 20
   rotationSpeed: 3
+  arrowPrefab: {fileID: 6851165236695209797, guid: ff672925114262e4883f88da5a7ae9be,
+    type: 3}
+  arrowHeightOffset: 2
+  arrowRotationSpeed: 10
 --- !u!1 &8895943650786873818
 GameObject:
   m_ObjectHideFlags: 0
