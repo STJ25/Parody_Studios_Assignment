@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Box
   pointValue: 1
   goalAmount: 5
-  timeLimit: 5
+  timeLimit: 120

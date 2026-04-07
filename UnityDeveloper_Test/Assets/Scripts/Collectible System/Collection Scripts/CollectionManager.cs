@@ -7,16 +7,16 @@ public class CollectionManager : MonoBehaviour
 
     [Header("Data")]
     public CollectibleData collectibleData;
+    
+    public static event Action <int>OnItemCollected;
+    public static event Action OnGoalReached;
+    public static event Action OnTimeExpired;
+    public static event Action <float>OnTimerUpdated;
 
-    public static event Action<int> OnItemCollected;       // fires every collect, passes current count
-    public static event Action OnGoalReached;              // fires when goal amount is met
-    public static event Action OnTimeExpired;              // fires when time runs out
-    public static event Action<float> OnTimerUpdated;      // fires every second, passes remaining time
-
-    private int currentCount = 0;
+    private int   currentCount    = 0;
     private float remainingTime;
-    private bool isTimerRunning = false;
-    private bool goalReached = false;
+    private bool  isTimerRunning  = false;
+    private bool  goalReached     = false;
 
     private void Awake()
     {
@@ -31,7 +31,6 @@ public class CollectionManager : MonoBehaviour
     private void Start()
     {
         remainingTime = collectibleData.timeLimit;
-        isTimerRunning = true;
     }
 
     private void Update()
@@ -43,10 +42,15 @@ public class CollectionManager : MonoBehaviour
 
         if (remainingTime <= 0f)
         {
-            remainingTime = 0f;
+            remainingTime  = 0f;
             isTimerRunning = false;
             OnTimeExpired?.Invoke();
         }
+    }
+
+    public void StartGame()
+    {
+        isTimerRunning = true;
     }
 
     public void CollectItem(CollectibleData data)
@@ -58,7 +62,7 @@ public class CollectionManager : MonoBehaviour
 
         if (currentCount >= collectibleData.goalAmount)
         {
-            goalReached = true;
+            goalReached    = true;
             isTimerRunning = false;
             OnGoalReached?.Invoke();
         }

@@ -30,8 +30,8 @@ public class CameraController : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         gravityController = GetComponent<GravityController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
         if (pivot == null) { Debug.LogError("Pivot is not assigned.", this); return; }
         yaw = pivot.eulerAngles.y;
