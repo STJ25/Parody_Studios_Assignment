@@ -4878,7 +4878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   gravityStrength: 20
-  rotationSpeed: 3
+  rotationSpeed: 5
   arrowPrefab: {fileID: 6851165236695209797, guid: ff672925114262e4883f88da5a7ae9be,
     type: 3}
   arrowHeightOffset: 2
